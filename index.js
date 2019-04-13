@@ -19,7 +19,7 @@ const escogerBdd = async (req, res, next) => {
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({credentials: true, origin: true}));
 
 require('./routes/usuariosRoutes')(app, escogerBdd);
 require('./routes/dependientesRoutes')(app, escogerBdd);
